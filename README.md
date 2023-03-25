@@ -1,2 +1,2 @@
 # battleship-online
-just battleship game online nothing else
+just battleship game online, nothing else
