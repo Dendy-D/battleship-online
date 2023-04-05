@@ -1,0 +1,54 @@
+.main {
+  height: 100%;
+  background: linear-gradient(0deg, rgba(9, 5, 22, 0.49), rgba(9, 5, 22, 0.49)), url(../../assets/images/mainBackground.jpg) center no-repeat;
+
+  ::selection {
+    background: #715551;
+  }
+
+  svg {
+    cursor: pointer;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 30px 50px;
+
+    .languages {
+      display: flex;
+      justify-content: flex-end;
+      gap: 20px;
+
+      svg {
+        stroke: black;
+        stroke-width: 10px;
+
+        &:hover {
+          stroke-width: 0;
+          transition: 0.1s ease;
+          filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.6));
+        }
+      }
+
+      .active {
+        stroke-width: 0;
+        transition: 0.1s ease;
+        filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.6));
+      }
+    }
+
+    h1 {
+      text-align: center;
+      color: #1B2A37;
+      font-size: 96px;
+      font-weight: 500;
+      line-height: 120px;
+    }
+
+    .sound {
+      text-align: right;
+    }
+  }
+}
