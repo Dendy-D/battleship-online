@@ -1,12 +1,9 @@
 import React from 'react';
-import * as io from 'socket.io-client';
 
-const socket = io.connect('http://localhost:4000');
+import Main from '../Main';
 
 const App: React.FC = () => (
-  <div>
-      gg
-  </div>
+  <Main />
 );
 
 export default App;
