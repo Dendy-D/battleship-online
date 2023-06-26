@@ -1,0 +1,24 @@
+.component {
+  display: block;
+  text-align: center;
+  width: 40%;
+  min-width: 300px;
+  max-width: 590px;
+  cursor: pointer;
+  color: #CCBBB6;
+  font-size: 3rem;
+  padding: 56px calc(8px + 1.5625vw);
+  border-radius: 20px;
+  transition: 0.2s ease all;
+  background: rgba(47, 103, 135, 0.6);
+
+  &:hover {
+    transition: 0.2s ease all;
+    background: rgba(125, 88, 72, 0.6);
+  }
+
+  @media (max-width: 1024px) {
+    font-size: 2rem;
+  }
+
+}
