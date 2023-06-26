@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import debounce from 'lodash/debounce';
 
-import Menu from '../routes/Menu';
+import MainMenu from '../routes/MainMenu';
 import { ReactComponent as Eng } from '../../assets/icons/EN.svg';
 import { ReactComponent as Esp } from '../../assets/icons/ESP.svg';
 import { ReactComponent as SoundOn } from '../../assets/icons/soundOn.svg';
@@ -50,7 +51,9 @@ const Main: React.FC = () => {
         <h1>
           Battleship game
         </h1>
-        <Menu />
+        <Routes>
+          <Route path="/" element={<MainMenu />} />
+        </Routes>
         <div className={classes.sound}>
           {sound ? <SoundOn onClick={handleSound} /> : <SoundOff onClick={handleSound} />}
         </div>
