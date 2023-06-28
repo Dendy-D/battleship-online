@@ -1,15 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import debounce from 'lodash/debounce';
+import clsx from 'clsx';
 
 import MainMenu from '../routes/MainMenu';
+import VsPlayerMenu from '../routes/VsPlayerMenu';
 import { ReactComponent as Eng } from '../../assets/icons/EN.svg';
 import { ReactComponent as Esp } from '../../assets/icons/ESP.svg';
 import { ReactComponent as SoundOn } from '../../assets/icons/soundOn.svg';
 import { ReactComponent as SoundOff } from '../../assets/icons/soundOff.svg';
+import { ReactComponent as GoBack } from '../../assets/icons/goBack.svg';
 import classes from './Main.module.scss';
 
 const Main: React.FC = () => {
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
+
   const [dimensions, setDimensions] = useState({
     width: window.innerWidth,
     height: window.innerHeight,
@@ -53,9 +59,15 @@ const Main: React.FC = () => {
         </h1>
         <Routes>
           <Route path="/" element={<MainMenu />} />
+          <Route path="/vs-player" element={<VsPlayerMenu />} />
         </Routes>
-        <div className={classes.sound}>
-          {sound ? <SoundOn onClick={handleSound} /> : <SoundOff onClick={handleSound} />}
+        <div className={clsx({
+          [classes.footer]: pathname === '/vs-player',
+        })}>
+          {pathname === '/vs-player' && <div><GoBack className={classes.goBack} onClick={() => navigate('/')} /></div>}
+          <div className={classes.sound}>
+            {sound ? <SoundOn onClick={handleSound} /> : <SoundOff onClick={handleSound} />}
+          </div>
         </div>
       </div>
     </main>
