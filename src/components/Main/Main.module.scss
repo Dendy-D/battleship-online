@@ -47,8 +47,23 @@
       line-height: 120px;
     }
 
+    .footer {
+      display: flex;
+      justify-content: space-between;
+    }
+
     .sound {
-      text-align: right;
+      text-align: end;
+
+      &:hover path {
+        fill: #C8A89F;
+      }
+    }
+
+    .goBack {
+      &:hover path {
+        fill: #C8A89F;
+      }
     }
   }
 }
