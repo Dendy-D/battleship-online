@@ -3,14 +3,14 @@
   text-align: center;
   width: 40%;
   min-width: 300px;
-  max-width: 590px;
+  max-width: 550px;
   cursor: pointer;
   color: #CCBBB6;
   font-size: 3rem;
-  padding: 56px calc(8px + 1.5625vw);
+  padding: 50px calc(8px + 1.5625vw);
   border-radius: 20px;
   transition: 0.2s ease all;
-  background: rgba(47, 103, 135, 0.6);
+  background: rgba(47, 103, 135, 0.4);
 
   &:hover {
     transition: 0.2s ease all;
